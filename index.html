@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+     body {
+         max-width: 800px;
+         margin-left: auto;
+         margin-right: auto;
+     }
+
+     h1 {
+         font-size: 120%;
+         font-weight: normal;
+         font-family: sans-serif;
+         color: grey;
+     }
+
+     h1 > a, h1 > a:visited {
+         text-decoration: none;
+         color: grey;
+     }
+
+     h1 > a:hover { color: blue }
+
+     pre {
+         background-color: #e5f2ff;
+         line-height: 130%;
+         padding: 10px;
+         font-size: 110%;
+     }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <a href="http://szymzet.github.io/">
+        Szymzet's Programming Blog
+      </a>
+    </h1>
+    <article>
+      <h2>
+        Emacs key-chord binding tip
+      </h2>
+      <time datetime="2015-18-10">Oct 18, 2015</time>
+      <p>
+        One of the commonly suggested solutions to boost editing productivity in Emacs is usage of the <a href="https://melpa.org/#/key-chord">key-chord</a> plugin. I think it is great advice, but once you start to use it the question arises:
+      </p>
+      <p>
+        Which key combinations should I use as key chords?
+      </p>
+      <p>
+        I would like to share a productivity tip for those who are looking fo an anwser to this question. So to start let us define what makes a good key chord:
+      </p>
+      <ul>
+        <li>easy to remember</li>
+        <li>hard to press by accident</li>
+        <li>pressed using strong fingers</li>
+      </ul>
+      <p>
+        The solution I came up which satisfies the above checklist is to use the digits 3 or 9 as first letters of the keychord and use a letter on the other side of the keyboard as the second key. An example should clarify what I mean:
+      </p>
+      <p>
+        <pre><code>(key-chord-define-global "3k" 'kill-buffer)</code></pre>
+      </p>
+      <h3>
+        Easy to remember
+      </h3>
+      <p>
+        The only thing that needs to be remembered is the single letter, the digit is implied by the letter. k is for kill-buffer, k is on the right side of keybord so I press it with 3 - simple.
+      </p>
+      <h3>
+        Hard to press by accident
+      </h3>
+      <p>
+        I have never pressed those by accident while writing prose nor code. Think about it - how often do you type a digit and a letter consecutively?
+      </p>
+      <h3>
+        Pressed using strong fingers
+      </h3>
+      <p>
+        Both 3 and 9 are pressed easily using the middle finger with little movement. The choice of the other key is up to you - but there is plenty to choose from, <code>3k</code>, <code>3j</code>, <code>9f</code>, <code>9e</code> to name a few.
+      </p>
+      <p>
+        Other examples with mnemonics:
+      </p>
+      <pre><code>(key-chord-define-global "9f" 'projectile-find-file) ; F == File
+(key-chord-define-global "9w" 'save-buffer) ; W == Write
+(key-chord-define-global "3j" 'avy-goto-subword-1) ; J == Jump
+(key-chord-define-global "9r" 'anzu-query-replace-regexp) ; R == Replace
+(key-chord-define-global "9t" 'delete-trailing-whitespace) ; T == Trailing
+(key-chord-define-global "3u" 'undo-tree-visualize) ; U == Undo</code></pre>
+    </article>
+  </body>
+</html>
